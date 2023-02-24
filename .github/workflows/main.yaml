@@ -1,0 +1,20 @@
+name: Upload Website
+
+on:
+  push:
+    branches:
+    - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+    - name: Set AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.S3_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+        aws-region: eu-north-1
+    - name: Copy to S3
+      run: aws s3 sync . s3://nationenmedia/arkiv/papiravisas-kamp-mot-klokka --exclude '.git*/*'
