@@ -1,5 +1,5 @@
 /* Appear */
-const appearElements = document.querySelectorAll('.appear'),
+const appearElements = document.querySelectorAll('.natlab .appear'),
     appearObs = new IntersectionObserver(e => {
     e.forEach(entry => {
         let t = entry.target
@@ -9,7 +9,7 @@ const appearElements = document.querySelectorAll('.appear'),
 appearElements.forEach(e => { appearObs.observe(e) })
 
 /* Video autoplay */
-const videos = document.querySelectorAll('video'),
+const videos = document.querySelectorAll('.natlab video'),
     videoObs = new IntersectionObserver(e => {
     e.forEach(entry => {
         let t = entry.target
@@ -82,14 +82,14 @@ const route = [
 // Config
 let travelStatus = 0, // Array index
     routeTime = 8000,
-    __mapContainer = document.querySelector('.route-map-container'),
-    __info = document.querySelector('.route-info'),
-    __path = document.querySelector('.route-map-route'),
-    __point = document.querySelector('.route-point-indicator'),
-    __hours = document.querySelector('.route-hours'),
-    __minutes = document.querySelector('.route-minutes'),
-    __ferries = document.querySelector('.route-ferries'),
-    __distance = document.querySelector('.route-distance')
+    __mapContainer = document.querySelector('.natlab .route-map-container'),
+    __info = document.querySelector('.natlab .route-info'),
+    __path = document.querySelector('.natlab .route-map-route'),
+    __point = document.querySelector('.natlab .route-point-indicator'),
+    __hours = document.querySelector('.natlab .route-hours'),
+    __minutes = document.querySelector('.natlab .route-minutes'),
+    __ferries = document.querySelector('.natlab .route-ferries'),
+    __distance = document.querySelector('.natlab .route-distance')
 
 // General functions
 function mToHm(min) {
@@ -156,21 +156,22 @@ var sectionObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting && s.dataset.section) {
             let sectionName = s.dataset.section
             s.classList.add('active')
-            s.querySelector('.route-map-target').append(__mapContainer)
-            s.querySelector('.route-info-target').append(__info)
+            s.querySelector('.natlab .route-map-target').append(__mapContainer)
+            s.querySelector('.natlab .route-info-target').append(__info)
             setTimeout(() => { travelTo(sectionName) }, 1000)
         }
         else s.classList.remove('active')
     })
 }, { threshold: 0.1 })
-const sections = document.querySelectorAll('.route-trigger')
+const sections = document.querySelectorAll('.natlab .route-trigger')
 sections.forEach(s => sectionObserver.observe(s))
 
 
 /* Toggle dark mode */
 function toggleDark(el) {
-    document.body.classList.toggle('dark')
-    let dark = document.body.classList.contains('dark')
+    let root = document.querySelector(".natlab")
+    rott.classList.toggle('dark')
+    let dark = root.classList.contains('dark')
     el.innerHTML = dark ? "Bli lys ☀️" : "Gjør mørk 🌙"
     el.parentNode.querySelector('span').innerHTML = dark ? "Hei! Du leser nå artikkelen i mørk utgave. Synes du det er rart, kan du endre til lys utgave." : "Hei! Du leser nå artikkelen i lys utgave. Ble det for kjedelig, endre til mørk!"
 }
