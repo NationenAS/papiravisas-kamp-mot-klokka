@@ -170,7 +170,7 @@ sections.forEach(s => sectionObserver.observe(s))
 /* Toggle dark mode */
 function toggleDark(el) {
     let root = document.querySelector(".natlab")
-    rott.classList.toggle('dark')
+    root.classList.toggle('dark')
     let dark = root.classList.contains('dark')
     el.innerHTML = dark ? "Bli lys ☀️" : "Gjør mørk 🌙"
     el.parentNode.querySelector('span').innerHTML = dark ? "Hei! Du leser nå artikkelen i mørk utgave. Synes du det er rart, kan du endre til lys utgave." : "Hei! Du leser nå artikkelen i lys utgave. Ble det for kjedelig, endre til mørk!"
