@@ -2,7 +2,8 @@
 
     * {
         margin: 0;
-        padding: 0
+        padding: 0;
+        box-sizing: border-box;
     }
 
     --dark: #171717;
@@ -11,9 +12,8 @@
     --my: 3rem;
     --font-pri: pt-serif, serif;
     --font-sec: contralto-big, "Tiempos Headline", serif;
-    --font-ter: adelle-sans, "Adelle Sans", sans-serif
+    --font-ter: adelle-sans, "Adelle Sans", sans-serif;
 
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     scroll-behavior: smooth;
     cursor: default;
@@ -364,7 +364,7 @@
     }
     
     @media screen and (min-width:480px) {
-        html {
+        .natlab {
             font-size: 18px
         }
     }
