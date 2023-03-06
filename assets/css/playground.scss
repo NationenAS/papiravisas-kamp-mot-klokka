@@ -5,6 +5,14 @@
         padding: 0
     }
 
+    --dark: #171717;
+    --theme: #1f3767;
+    --black: #202020;
+    --my: 3rem;
+    --font-pri: pt-serif, serif;
+    --font-sec: contralto-big, "Tiempos Headline", serif;
+    --font-ter: adelle-sans, "Adelle Sans", sans-serif
+
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -14,14 +22,6 @@
     overflow-x: hidden;
     font-family: var(--font-pri);
     font-size: 16px;
-
-    --dark: #171717;
-    --theme: #1f3767;
-    --black: #202020;
-    --my: 3rem;
-    --font-pri: pt-serif, serif;
-    --font-sec: contralto-big, "Tiempos Headline", serif;
-    --font-ter: adelle-sans, "Adelle Sans", sans-serif
 
     video {
         max-width: 100%
