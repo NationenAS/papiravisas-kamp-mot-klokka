@@ -144,35 +144,35 @@ ul {
     max-width: 100%
 }
 
-.col--natlab-small {
+.col--small {
     width: var(--natlab-col-small)
 }
 
-.col--natlab-large {
+.col--large {
     width: var(--natlab-col-large)
 }
 
-.col--natlab-full {
+.col--full {
     width: 100%
 }
 
-.col--natlab-split {
+.col--split {
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem
 }
 
-.col--natlab-split>div {
+.col--split>div {
     width: 100%
 }
 
-.col--natlab-expand {
+.col--expand {
     padding-left: 0;
     padding-right: 0
 }
 
-.col--natlab-expand figcaption {
+.col--expand figcaption {
     padding-left: 1rem;
     padding-right: 1rem
 }
@@ -312,7 +312,6 @@ h1 {
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1
 }
 
 .full-quote img {
@@ -324,7 +323,8 @@ h1 {
 .full-quote .quote-content {
     height: 100vh;
     max-width: var(--natlab-col);
-    margin: 0 auto
+    margin: 0 auto;
+    position: relative;
 }
 
 .full-quote .quote-name span {
